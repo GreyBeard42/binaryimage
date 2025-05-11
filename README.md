@@ -1,2 +1,3 @@
-# p5template
-My own little p5 template
+# Binary Image
+
+Turn text into a black and white image (it's binary!!)
