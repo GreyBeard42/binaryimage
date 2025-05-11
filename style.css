@@ -1,0 +1,10 @@
+#content {
+    display: flex;
+}
+
+textarea {
+    display: block;
+    width: max(33.33vw, 200px);
+    height: 20vh;
+    resize: none;
+}
