@@ -7,8 +7,9 @@ function binary(txt) {
     return Array.from(bytes).map(byte => byte.toString(2).padStart(8, '0')).join('')
 }
 
-input.addEventListener("input", () => {
-    let encoded = binary(input.value)
+
+function update() {
+  let encoded = binary(input.value)
     let w = Math.ceil(Math.sqrt(encoded.length))
     img = createImage(w,w)
     img.loadPixels()
@@ -24,10 +25,11 @@ input.addEventListener("input", () => {
     img.updatePixels()
     background(200)
     image(img, 0, 0, width, height)
-})
+}
 
 function download() {
     if(input.value.length === 0) return
+    update()
     noSmooth()
     let encoded = binary(input.value)
     let w = Math.ceil(Math.sqrt(encoded.length))
@@ -44,7 +46,11 @@ function setup() {
     background(200)
     noLoop()
     if(!file) file = createFileInput(handleFile).parent("fileouter")
+    textSize(30)
+    text("NEW!\nClick to update!\nReduce lag!",10,40)
 }
+
+document.getElementById("canvas").addEventListener("click", update)
 
 function unbinary(binaryStr) {
     let binaryArray = binaryStr.trim().match(/.{1,8}/g)
