@@ -1,0 +1,16 @@
+{
+  "title": "Binary Image",
+  "desc": "Turn text into a black and white image (it's binary!!)",
+
+  "status": "archived",
+  "version": "v1",
+
+  "date": "4/11/2025",
+
+  "tags": [
+    "javascript",
+    "p5.js",
+    "tool",
+    "encryption"
+  ]
+}
